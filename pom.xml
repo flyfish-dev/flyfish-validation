@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>dev.flyfish</groupId>
     <artifactId>flyfish-validation-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Flyfish Validation</name>
     <description>面向 Java 8-21 与 Spring Boot 2/3/4 的企业级验证增强库</description>

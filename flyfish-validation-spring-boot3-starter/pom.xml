@@ -4,7 +4,7 @@
     <parent>
         <groupId>dev.flyfish</groupId>
         <artifactId>flyfish-validation-parent</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>flyfish-validation-spring-boot3-starter</artifactId>
     <packaging>jar</packaging>

@@ -9,7 +9,7 @@
     </parent>
     <groupId>dev.flyfish.validation.example</groupId>
     <artifactId>flyfish-validation-boot4-example</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <name>Flyfish Validation Boot 4 Example</name>
     <properties>
         <java.version>17</java.version>
@@ -18,7 +18,7 @@
         <dependency>
             <groupId>dev.flyfish</groupId>
             <artifactId>flyfish-validation-spring-boot4-starter</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
