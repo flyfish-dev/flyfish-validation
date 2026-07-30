@@ -16,4 +16,5 @@
 - [ ] Central Portal 中的 `dev.flyfish` namespace 已验证
 - [ ] GitHub Actions 已配置 `CENTRAL_USERNAME`、`CENTRAL_PASSWORD`、
       `GPG_PRIVATE_KEY` 与 `GPG_PASSPHRASE`
+- [ ] 版本号更新后，通过 `Maven Central Release` 的 `workflow_dispatch` 手动发布
 - [ ] `mvn -B -ntp -Prelease clean deploy` 已等待至 `published`

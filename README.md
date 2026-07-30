@@ -1,6 +1,7 @@
 # Flyfish Validation
 
 [![CI](https://github.com/flyfish-dev/flyfish-validation/actions/workflows/ci.yml/badge.svg)](https://github.com/flyfish-dev/flyfish-validation/actions/workflows/ci.yml)
+[![Maven Central](https://img.shields.io/maven-central/v/dev.flyfish/flyfish-validation-core.svg?label=Maven%20Central)](https://central.sonatype.com/artifact/dev.flyfish/flyfish-validation-core/1.0.0)
 [![License](https://img.shields.io/badge/license-Apache--2.0-5c49e8.svg)](LICENSE)
 [![Java](https://img.shields.io/badge/Java-8—21-0b1017.svg)](docs/compatibility.md)
 

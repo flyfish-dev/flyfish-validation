@@ -12,7 +12,9 @@ import xml.etree.ElementTree as ET
 import zipfile
 
 EXCLUDED_PARTS = {
-    ".git", ".idea", ".vscode", "target", "__pycache__"
+    ".git", ".idea", ".next", ".vinext", ".vscode", ".wrangler",
+    "__pycache__", "coverage", "dist", "node_modules", "offline-build",
+    "outputs", "target", "work",
 }
 EXCLUDED_SUFFIXES = {".class", ".pyc", ".pyo", ".zip"}
 FIXED_TIME = (2026, 7, 29, 0, 0, 0)
