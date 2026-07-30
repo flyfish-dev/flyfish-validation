@@ -8,7 +8,7 @@
 而是在 Hibernate Validator 与 Spring Validation 的成熟基础设施上补齐常见业务
 规则、跨字段关系、数据库关联验证、统一失败行为和多版本 Starter。
 
-**官方网站：** <https://flyfish-validation-site.wybaby168.workers.dev>
+**官方网站：** <https://validation.flyfish.group>
 
 ## 设计目标
 

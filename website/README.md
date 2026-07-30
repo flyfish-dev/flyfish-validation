@@ -3,7 +3,7 @@
 Flyfish Validation 1.0.0 的官方中文网站。站点使用 vinext 构建为 Cloudflare
 Worker，包含响应式产品介绍、验证流水线动画、能力矩阵、快速接入示例与发布质量说明。
 
-线上地址：<https://flyfish-validation-site.wybaby168.workers.dev>
+线上地址：<https://validation.flyfish.group>
 
 ## 本地开发
 

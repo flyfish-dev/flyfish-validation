@@ -4,7 +4,7 @@ import "./globals.css";
 const title = "Flyfish Validation — 企业级 Java 验证增强库";
 const description =
   "72 个生产级约束，兼容 Java 8–21 与 Spring Boot 2/3/4。统一输入验证、业务规则与安全失败响应。";
-const siteUrl = "https://flyfish-validation-site.wybaby168.workers.dev";
+const siteUrl = "https://validation.flyfish.group";
 const socialImage = `${siteUrl}/og.png`;
 
 export const metadata: Metadata = {

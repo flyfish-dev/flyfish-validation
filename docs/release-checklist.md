@@ -12,6 +12,7 @@
 - [ ] 公共 API 二进制兼容检查通过
 - [ ] CHANGELOG、README、迁移文档已更新
 - [ ] source/javadoc JAR、签名、校验和已生成
+- [ ] 发布签名指纹为 `361C 52A3 F6B5 CA75 D8B7  9C08 44BF 9601 A5D2 26FA`
 - [ ] Central Portal 中的 `dev.flyfish` namespace 已验证
 - [ ] GitHub Actions 已配置 `CENTRAL_USERNAME`、`CENTRAL_PASSWORD`、
       `GPG_PRIVATE_KEY` 与 `GPG_PASSPHRASE`

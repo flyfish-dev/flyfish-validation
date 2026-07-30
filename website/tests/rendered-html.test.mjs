@@ -39,7 +39,7 @@ test("server-renders the finished Flyfish Validation homepage", async () => {
   assert.match(html, /dev\.flyfish/);
   assert.match(
     html,
-    /https:\/\/flyfish-validation-site\.wybaby168\.workers\.dev\/og\.png/,
+    /https:\/\/validation\.flyfish\.group\/og\.png/,
   );
   assert.match(html, /aria-label="主导航"/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/);
