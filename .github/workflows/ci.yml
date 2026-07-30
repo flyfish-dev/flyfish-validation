@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+    branches: [main, "release/**", "feature/**"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-compatibility:
+    name: Offline source compatibility
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - run: ./scripts/verify-source-compatibility.sh
+
+  full-reactor:
+    name: Full reactor / JDK ${{ matrix.java }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [17, 21]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java }}
+          cache: maven
+      - run: mvn -B -ntp clean verify
+
+  boot2-track:
+    name: Boot 2 / JDK ${{ matrix.java }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [8, 11, 17, 21]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java }}
+          cache: maven
+      - run: >-
+          mvn -B -ntp
+          -pl flyfish-validation-spring-boot2-starter
+          -am clean verify

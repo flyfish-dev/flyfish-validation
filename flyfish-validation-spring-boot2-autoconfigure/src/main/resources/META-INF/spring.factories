@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+dev.flyfish.validation.boot2.autoconfigure.FlyfishValidationAutoConfiguration,\
+dev.flyfish.validation.boot2.autoconfigure.FlyfishValidationWebAutoConfiguration

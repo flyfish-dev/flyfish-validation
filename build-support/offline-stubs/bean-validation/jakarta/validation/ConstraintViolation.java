@@ -1,0 +1,1 @@
+package jakarta.validation; import jakarta.validation.metadata.ConstraintDescriptor; public interface ConstraintViolation<T> { String getMessage(); T getRootBean(); Object getInvalidValue(); Path getPropertyPath(); ConstraintDescriptor<?> getConstraintDescriptor(); }

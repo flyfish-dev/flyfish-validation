@@ -1,0 +1,1 @@
+package javax.validation; public interface ConstraintValidator<A extends java.lang.annotation.Annotation,T> { default void initialize(A annotation) { } boolean isValid(T value, ConstraintValidatorContext context); }

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>dev.flyfish</groupId>
+        <artifactId>flyfish-validation-parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
+    <artifactId>flyfish-validation-javax</artifactId>
+    <packaging>jar</packaging>
+    <name>Flyfish Validation Javax</name>
+    <description>Bean Validation 2 / javax.validation 约束适配</description>
+    <dependencies>
+        <dependency>
+            <groupId>dev.flyfish</groupId>
+            <artifactId>flyfish-validation-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${javax.validation.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate.validator6.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.el</artifactId>
+            <version>3.0.1-b12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <properties>
+        <maven.compiler.release>8</maven.compiler.release>
+        <automatic.module.name>dev.flyfish.validation.javax</automatic.module.name>
+    </properties>
+</project>

@@ -1,0 +1,1 @@
+package org.springframework.boot.autoconfigure.validation; public interface ValidationConfigurationCustomizer { void customize(jakarta.validation.Configuration<?> configuration); }

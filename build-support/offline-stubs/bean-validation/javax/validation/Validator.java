@@ -1,0 +1,1 @@
+package javax.validation; import java.util.Set; public interface Validator { <T> Set<ConstraintViolation<T>> validate(T object, Class<?>... groups); <T> Set<ConstraintViolation<T>> validateProperty(T object,String propertyName,Class<?>... groups); <T> Set<ConstraintViolation<T>> validateValue(Class<T> beanType,String propertyName,Object value,Class<?>... groups); }

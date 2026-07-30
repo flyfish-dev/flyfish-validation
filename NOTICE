@@ -1,0 +1,11 @@
+Flyfish Validation
+Copyright 2026 Flyfish Open Source Studio
+
+This product includes APIs designed to integrate with Spring Framework,
+Spring Boot, Bean Validation and Hibernate Validator. Those projects remain
+subject to their respective licenses. No third-party source code is copied
+into production modules.
+
+The build-support/offline-stubs directory contains minimal, independently
+written API signatures used only for syntax and compatibility compilation in
+offline environments. It is not packaged into any runtime artifact.

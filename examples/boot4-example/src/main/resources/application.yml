@@ -1,0 +1,9 @@
+flyfish:
+  validation:
+    fail-fast: false
+    expose-rejected-value: false
+    web:
+      enabled: true
+      status: 400
+      code: VALIDATION_FAILED
+      message: 请求参数验证失败

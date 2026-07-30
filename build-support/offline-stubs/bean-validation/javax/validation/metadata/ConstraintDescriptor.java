@@ -1,0 +1,1 @@
+package javax.validation.metadata; import java.lang.annotation.Annotation; import java.util.Map; public interface ConstraintDescriptor<T extends Annotation> { T getAnnotation(); Map<String,Object> getAttributes(); }
