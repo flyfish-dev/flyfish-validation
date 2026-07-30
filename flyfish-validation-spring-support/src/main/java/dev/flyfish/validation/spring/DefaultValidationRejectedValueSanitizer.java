@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import dev.flyfish.validation.api.ValidationError;
@@ -20,6 +21,11 @@ public final class DefaultValidationRejectedValueSanitizer
     implements ValidationRejectedValueSanitizer {
 
     private static final int MAX_ATTRIBUTE_DEPTH = 4;
+    private static final String[] SENSITIVE_PATH_FRAGMENTS = {
+        "authorization", "cookie", "password", "passwd", "secret", "token",
+        "apikey", "accesskey", "privatekey", "credential", "sessionid",
+        "jsessionid", "otp", "cvv", "bankcard", "idcard"
+    };
 
     private final boolean exposeRejectedValue;
     private final boolean exposeAttributes;
@@ -40,7 +46,12 @@ public final class DefaultValidationRejectedValueSanitizer
             .propertyPath(error.getPropertyPath())
             .severity(error.getSeverity())
             .validator(error.getValidator());
-        if (exposeRejectedValue) {
+        /*
+         * The general exposure switch is useful for harmless fields, but it must never override
+         * the sensitive-field denylist. Otherwise a diagnostics setting could reflect passwords,
+         * tokens, or credentials into API responses and logs without any warning at the call site.
+         */
+        if (exposeRejectedValue && !isSensitivePath(error.getPropertyPath())) {
             builder.rejectedValue(simpleValue(error.getRejectedValue(), 0));
         }
         if (exposeAttributes) {
@@ -51,6 +62,24 @@ public final class DefaultValidationRejectedValueSanitizer
             }
         }
         return builder.build();
+    }
+
+    private static boolean isSensitivePath(String propertyPath) {
+        if (propertyPath == null || propertyPath.isEmpty()) {
+            return false;
+        }
+        String normalized = propertyPath.toLowerCase(Locale.ROOT)
+            .replace("_", "")
+            .replace("-", "")
+            .replace(".", "")
+            .replace("[", "")
+            .replace("]", "");
+        for (String fragment : SENSITIVE_PATH_FRAGMENTS) {
+            if (normalized.contains(fragment)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private static Object simpleValue(Object value, int depth) {
