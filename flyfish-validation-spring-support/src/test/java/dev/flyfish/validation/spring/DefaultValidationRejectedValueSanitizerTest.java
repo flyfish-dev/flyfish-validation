@@ -4,7 +4,6 @@ import dev.flyfish.validation.api.ValidationError;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
 
 /** 敏感字段即使启用 rejected value 诊断开关也必须保持脱敏。 */
 class DefaultValidationRejectedValueSanitizerTest {
@@ -21,9 +20,10 @@ class DefaultValidationRejectedValueSanitizerTest {
 
     @Test
     void neverExposesSensitiveRejectedValues() {
-        assertNull(sanitizer.sanitize(error("password", "Plaintext-Secret")).getRejectedValue());
-        assertNull(sanitizer.sanitize(error("credentials.clientSecret", "secret")).getRejectedValue());
-        assertNull(sanitizer.sanitize(error("oauth.access_token", "token")).getRejectedValue());
+        // 离线兼容检查使用最小 JUnit API 桩；用标准等值断言保持测试语义且不扩大桩接口。
+        assertEquals(null, sanitizer.sanitize(error("password", "Plaintext-Secret")).getRejectedValue());
+        assertEquals(null, sanitizer.sanitize(error("credentials.clientSecret", "secret")).getRejectedValue());
+        assertEquals(null, sanitizer.sanitize(error("oauth.access_token", "token")).getRejectedValue());
     }
 
     private static ValidationError error(String propertyPath, Object rejectedValue) {
